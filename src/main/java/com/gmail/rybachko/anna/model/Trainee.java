@@ -1,6 +1,7 @@
 package com.gmail.rybachko.anna.model;
 
 import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 import java.util.Objects;
 
 public class Trainee extends Employee {
@@ -27,6 +28,18 @@ public class Trainee extends Employee {
 
     public void setEndOfInternship(LocalDate endOfInternship) {
         this.endOfInternship = endOfInternship;
+    }
+
+    public String getDurationOfInternship() {
+        return startOfInternship.until(endOfInternship, ChronoUnit.DAYS) + " days";
+    }
+
+    @Override
+    public String getFullInformation() {
+        return "Должность: Стажер \n" +
+                super.getFullInformation() +
+                "\nНачало стажировки: " + startOfInternship +
+                "\nКонец стажировки: " + endOfInternship;
     }
 
     @Override

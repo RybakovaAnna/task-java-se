@@ -30,6 +30,21 @@ public class TeamLeader extends Employee implements ManagerService {
         this.numberOfProjects = numberOfProjects;
     }
 
+    public double getHoursSpentOnProjectInWeek() {
+        if (numberOfProjects == 0) {
+            return 0;
+        }
+        return 40.0 / numberOfProjects;
+    }
+
+    @Override
+    public String getFullInformation() {
+        return "Должность: Руководитель команды \n" +
+                super.getFullInformation() +
+                "\nКол-во подчиненных: " + numberOfSubordinates +
+                "\nКол-во проектов: " + numberOfProjects;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

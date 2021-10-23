@@ -37,6 +37,12 @@ public abstract class Employee {
         this.grade = grade;
     }
 
+    public String getFullInformation() {
+        return "Имя: " + firstName +
+                "\nФамилия: " + lastName +
+                "\nГрейд: " + grade;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

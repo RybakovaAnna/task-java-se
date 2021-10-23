@@ -4,9 +4,9 @@ import java.util.Objects;
 
 public class Developer extends Employee {
     private String programmingLanguage;
-    private Double developmentExperience;
+    private double developmentExperience;
 
-    public Developer(String firstName, String lastName, int grade, String programmingLanguage, Double developmentExperience) {
+    public Developer(String firstName, String lastName, int grade, String programmingLanguage, double developmentExperience) {
         super(firstName, lastName, grade);
         this.programmingLanguage = programmingLanguage;
         this.developmentExperience = developmentExperience;
@@ -20,12 +20,24 @@ public class Developer extends Employee {
         this.programmingLanguage = programmingLanguage;
     }
 
-    public Double getDevelopmentExperience() {
+    public double getDevelopmentExperience() {
         return developmentExperience;
     }
 
-    public void setDevelopmentExperience(Double developmentExperience) {
+    public void setDevelopmentExperience(double developmentExperience) {
         this.developmentExperience = developmentExperience;
+    }
+
+    public int getMonthsOfDevelopmentExperience() {
+        return (int) developmentExperience * 12;
+    }
+
+    @Override
+    public String getFullInformation() {
+        return "Должность: Разработчик \n" +
+                super.getFullInformation() +
+                "\nЯзык программирования: " + programmingLanguage +
+                "\nОпыт разработки: " + developmentExperience;
     }
 
     @Override
