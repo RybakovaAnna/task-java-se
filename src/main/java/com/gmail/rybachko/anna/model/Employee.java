@@ -7,7 +7,9 @@ public abstract class Employee {
     private String lastName;
     private int grade;
 
-    Employee(String firstName, String lastName, int grade) {
+    public Employee(){}
+
+    public Employee(String firstName, String lastName, int grade) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.grade = grade;
@@ -58,6 +60,6 @@ public abstract class Employee {
 
     @Override
     public String toString() {
-        return firstName + lastName;
+        return firstName +" " + lastName;
     }
 }
